@@ -104,6 +104,7 @@ export default async function PostPage({ params }: PostPageProps) {
           contactBody: dict.postDetail.contactBody,
           contactCta: dict.postDetail.contactCta,
           authorRole: dict.postDetail.authorRole,
+          photoCaption: dict.postDetail.photoCaption,
         }}
       />
     </>

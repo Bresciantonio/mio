@@ -23,7 +23,7 @@ export function LanguageSwitcher({ locale, className }: LanguageSwitcherProps) {
       role="group"
       aria-label="Language"
       className={cn(
-        "inline-flex items-center gap-0.5 rounded-full border border-ink-200 bg-white/80 p-1 text-xs font-semibold",
+        "inline-flex items-center gap-0.5 rounded-full border border-ink-200 bg-white/80 p-1 text-micro font-semibold",
         className,
       )}
     >

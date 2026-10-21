@@ -6,12 +6,10 @@ import { cn } from "@/lib/cn";
 import { localizePath, type Locale } from "@/lib/i18n";
 import { Icon } from "./icons";
 import { Reveal } from "./reveal";
-import { Section } from "./section";
 
 interface NewsletterProps {
   locale: Locale;
   labels: {
-    eyebrow: string;
     title: string;
     subtitle: string;
     emailLabel: string;
@@ -34,10 +32,11 @@ type Status = "idle" | "submitting" | "success" | "error";
 /**
  * Newsletter sign-up.
  *
- * The reference site uses AcyMailing with an embedded privacy checkbox. Here
- * the form posts to `/api/newsletter`, which forwards to whichever provider is
+ * The form posts to `/api/newsletter`, which forwards to whichever provider is
  * configured through environment variables and degrades gracefully to a
- * server-side log when none is set.
+ * server-side log when none is set. When nothing is forwarded the visitor is
+ * told so: a subscription that promises a confirmation e-mail that never
+ * arrives is worse than no subscription at all.
  */
 export function Newsletter({ locale, labels }: NewsletterProps) {
   const emailId = useId();
@@ -92,36 +91,32 @@ export function Newsletter({ locale, labels }: NewsletterProps) {
   }
 
   return (
-    <Section tone="ink" id="newsletter">
-      <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+    <section className="bg-ink-950 py-16 text-white sm:py-20">
+      <div className="container-shell grid gap-10 lg:grid-cols-12 lg:gap-12">
         <Reveal className="lg:col-span-5">
-          <p className="eyebrow text-brand-300">
-            <span className="h-px w-6 bg-current" aria-hidden="true" />
-            {labels.eyebrow}
-          </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl">
+          <h2 className="text-title font-bold text-balance text-white">
             {labels.title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-pretty text-ink-100/80">
+          <p className="mt-5 max-w-md text-lead text-pretty text-ink-100/80">
             {labels.subtitle}
           </p>
         </Reveal>
 
-        <Reveal className="lg:col-span-7" delay={90}>
+        <Reveal delay={90} className="lg:col-span-7">
           {status === "success" ? (
             <div
               role="status"
-              className="flex items-start gap-3.5 rounded-2xl border border-brand-400/30 bg-brand-400/10 p-6"
+              className="flex items-start gap-3.5 border border-white/15 p-6"
             >
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-400/20 text-brand-200">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-500/20 text-brand-200">
                 <Icon name="check" className="size-5" strokeWidth={2.4} />
               </span>
-              <p className="text-base leading-relaxed text-white">
+              <p className="text-lead leading-relaxed text-white">
                 {delivered ? labels.success : labels.successPending}
               </p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate className="space-y-4">
+            <form onSubmit={onSubmit} noValidate className="space-y-5">
               <div className="flex flex-col gap-3 sm:flex-row">
                 <div className="flex-1">
                   <label htmlFor={emailId} className="sr-only">
@@ -136,13 +131,13 @@ export function Newsletter({ locale, labels }: NewsletterProps) {
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
                     placeholder={labels.emailPlaceholder}
-                    className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-sm text-white placeholder:text-ink-300/70 transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-400/30"
+                    className="w-full border-b border-white/25 bg-transparent px-1 py-3 text-small text-white placeholder:text-ink-300/70 transition focus:border-brand-400 focus:outline-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="btn bg-brand-500 text-white shadow-lg shadow-brand-500/20 hover:-translate-y-0.5 hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="btn bg-brand-700 text-white hover:-translate-y-0.5 hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === "submitting" ? labels.submitting : labels.submit}
                   {status === "submitting" ? null : (
@@ -153,12 +148,11 @@ export function Newsletter({ locale, labels }: NewsletterProps) {
 
               <label
                 htmlFor={consentId}
-                className="flex cursor-pointer items-start gap-3 text-sm text-ink-100/75"
+                className="flex cursor-pointer items-start gap-3 text-small text-ink-100/80"
               >
                 <input
                   id={consentId}
                   type="checkbox"
-                  name="consent"
                   checked={consent}
                   onChange={(event) => setConsent(event.target.checked)}
                   className="mt-0.5 size-4 shrink-0 rounded border-white/30 bg-transparent accent-brand-400"
@@ -167,7 +161,7 @@ export function Newsletter({ locale, labels }: NewsletterProps) {
                   {labels.consent}{" "}
                   <Link
                     href={localizePath(locale, "/privacy")}
-                    className="font-medium text-brand-300 underline underline-offset-2 transition hover:text-brand-200"
+                    className="font-medium text-brand-300 underline decoration-brand-300/40 underline-offset-2 transition hover:text-brand-200"
                   >
                     {labels.privacyLink}
                   </Link>
@@ -178,7 +172,7 @@ export function Newsletter({ locale, labels }: NewsletterProps) {
                 <p
                   role="alert"
                   className={cn(
-                    "text-sm",
+                    "text-small",
                     status === "error" ? "text-red-300" : "text-brand-200",
                   )}
                 >
@@ -189,6 +183,6 @@ export function Newsletter({ locale, labels }: NewsletterProps) {
           )}
         </Reveal>
       </div>
-    </Section>
+    </section>
   );
 }

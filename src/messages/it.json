@@ -18,7 +18,7 @@
   },
   "beta": {
     "label": "Beta",
-    "message": "Versione beta: contenuti, referenze e dati di contatto sono in fase di aggiornamento."
+    "message": "Contenuti, referenze e dati di contatto sono in fase di aggiornamento."
   },
   "nav": {
     "home": "Home",
@@ -33,25 +33,17 @@
     "cta": "Richiedi una consulenza"
   },
   "hero": {
-    "eyebrow": "Consulenza energetica indipendente",
-    "titleLead": "L'energia è un costo.",
-    "titleAccent": "La gestiamo come un asset.",
-    "subtitle": "Aiuto imprese, fondi e asset manager a ridurre i costi energetici, a tutelare gli investimenti in efficienza e rinnovabili e a pianificare la transizione verso la neutralità carbonica — con i dati, non con le impressioni.",
+    "title": "Consulenza energetica indipendente",
+    "subtitle": "Per imprese, fondi e asset manager. L'energia è un costo: la gestiamo come un asset. Riduco i costi energetici, tutelo gli investimenti in efficienza e rinnovabili e costruisco piani di decarbonizzazione credibili — con i dati, non con le impressioni.",
     "primaryCta": "Richiedi una consulenza",
     "secondaryCta": "Scopri i servizi",
-    "trustNote": "Nessuna commissione da fornitori o installatori: l'indipendenza è il mio metodo.",
+    "trustNote": "Nessuna commissione da fornitori o installatori: l'indipendenza è il metodo.",
+    "photoCaption": "Un impianto fotovoltaico visto dall'alto: da una scelta tecnica a una scelta economica.",
     "stats": [
       { "value": "15+", "label": "Anni di esperienza" },
       { "value": "200+", "label": "Progetti di efficienza" },
       { "value": "12", "label": "Paesi in cui ho operato" }
-    ],
-    "panel": {
-      "kpi": "Costo energia / fatturato",
-      "delta": "−32% in 24 mesi",
-      "caption": "Risparmio medio sui costi energetici",
-      "legend": ["Prima", "Dopo"],
-      "badge": "Indipendente · Senza conflitti di interesse"
-    }
+    ]
   },
   "trust": {
     "title": "Con chi lavoro",
@@ -65,48 +57,75 @@
       "Pubblica amministrazione"
     ]
   },
+  "calculator": {
+    "title": "Quanto ti costa l'energia?",
+    "subtitle": "Inserisci la spesa energetica annua. Il modello mostra l'ordine di grandezza che una diagnosi completa può rendere accessibile: una stima, non un preventivo.",
+    "label": "Spesa energetica annua",
+    "sliderLabel": "Sposta lo slider per cambiare la spesa energetica annua",
+    "example": 800000,
+    "range": [8, 15],
+    "resultLabel": "Potenziale di risparmio annuo",
+    "resultNote": "L'intervallo 8–15% è quello documentato negli audit. Il risultato reale si definisce in diagnosi, sui consumi e sui contratti di ogni singolo sito.",
+    "disclaimer": "Modello indicativo a fini di orientamento: non è un preventivo e non tiene conto di incentivi, coperture o prezzi futures."
+  },
+  "mission": {
+    "title": "Perché esisto",
+    "mission": "Rendere l'energia una variabile gestibile: aiutare imprese e investitori a ridurre i costi energetici, proteggere la redditività e costruire un percorso credibile di decarbonizzazione — con metodo, dati e indipendenza.",
+    "vision": "Un mercato in cui l'efficienza energetica non è un obbligo burocratico ma la decisione economica più razionale che un'organizzazione possa prendere.",
+    "principlesTitle": "I principi che non negozio",
+    "principles": [
+      { "title": "Indipendenza", "description": "Nessuna commissione da fornitori o EPC: il mio consiglio non cambia mai in funzione di chi lo paga." },
+      { "title": "Evidenza", "description": "Ogni raccomandazione poggia su dati verificabili, benchmark e assunzioni dichiarate." },
+      { "title": "Semplicità", "description": "Un deliverable che il management può usare subito vale più di un rapporto impeccabile e inutilizzabile." },
+      { "title": "Continuità", "description": "Il valore nasce nel tempo, dal riesame periodico e dalla verifica dei risultati." }
+    ]
+  },
+  "about": {
+    "title": "Un consulente senior, non un venditore.",
+    "paragraphs": [
+      "Da oltre quindici anni affianco imprese e investitori nella gestione dell'energia: dalla prima analisi dei consumi alla negoziazione dei contratti, fino alla governance del piano energetico.",
+      "Lavoro in modo indipendente, senza commissioni da fornitori o installatori. Il mio unico interesse è il risultato misurabile per il cliente: ogni raccomandazione è supportata da dati, modelli e una stima chiara del ritorno.",
+      "Mi occupo di contesti complessi — portafogli multi-sito, processi industriali ad alto consumo, operazioni di M&A con una componente energetica rilevante."
+    ],
+    "signature": "Antonio Brescia",
+    "role": "Senior Energy Consultant",
+    "photoCaption": "Una cabina di trasformazione: è lì che l'energia entra nel sito, ed è da lì che parte la misura."
+  },
   "services": {
-    "eyebrow": "Cosa faccio",
     "title": "Servizi di consulenza energetica",
-    "subtitle": "Un intervento su misura, dalla diagnosi iniziale alla verifica dei risparmi. Ogni progetto parte da un business case chiaro.",
+    "subtitle": "Sei interventi, ciascuno con un perimetro, un deliverable e un responsabile. Non vendo prodotti: faccio chiarezza su cosa conviene fare e cosa no.",
     "items": [
       {
-        "icon": "audit",
         "slug": "audit-energetico-e-due-diligence",
         "title": "Audit energetico e due diligence",
         "description": "Verifiche strutturate su consumi, contratti e asset per valutare rischi e margini di ottimizzazione prima di investire o acquisire.",
         "tags": ["ISO 50001", "EPC", "Benchmarking"]
       },
       {
-        "icon": "management",
         "slug": "gestione-dell-energia-e-iso-50001",
         "title": "Gestione dell'energia e ISO 50001",
         "description": "Progettazione del sistema di gestione dell'energia: KPI, responsabilità, monitoraggio e miglioramento continuo certificabile.",
         "tags": ["EnMS", "KPI", "Certificazione"]
       },
       {
-        "icon": "renewables",
         "slug": "rinnovabili-e-ppa",
         "title": "Rinnovabili e PPA",
         "description": "Scelta tecnologica, modello di sviluppo e struttura contrattuale di PPA e autoconsumo per bloccare il prezzo dell'energia nel tempo.",
         "tags": ["PPA", "Autoconsumo", "Fotovoltaico"]
       },
       {
-        "icon": "procurement",
         "slug": "acquisto-energia-e-gestione-del-rischio",
         "title": "Acquisto energia e gestione del rischio",
         "description": "Strategia di procurement, timing di mercato e coperture per ridurre la volatilità e difendere il budget aziendale.",
         "tags": ["Procurement", "Hedging", "Budget"]
       },
       {
-        "icon": "decarbonization",
         "slug": "decarbonizzazione-e-esg",
         "title": "Decarbonizzazione e ESG",
         "description": "Roadmap verso la neutralità carbonica, contabilità energetica e rendicontazione pronta per investitori e auditor.",
         "tags": ["Net Zero", "CSRD", "Reporting"]
       },
       {
-        "icon": "incentives",
         "slug": "incentivi-e-certificati-bianchi",
         "title": "Incentivi e certificati bianchi",
         "description": "Individuazione, pratica e rendicontazione di incentivi nazionali ed europei, senza rallentare gli altri progetti.",
@@ -114,49 +133,28 @@
       }
     ]
   },
-  "about": {
-    "eyebrow": "Chi sono",
-    "title": "Un consulente senior, non un venditore di tecnologie.",
-    "paragraphs": [
-      "Da oltre quindici anni affianco imprese e investitori nella gestione dell'energia: dalla prima analisi dei consumi alla negoziazione dei contratti, fino alla governance del piano energetico.",
-      "Lavoro in modo indipendente, senza commissioni da fornitori o installatori. Il mio unico interesse è il risultato misurabile per il cliente: ogni raccomandazione è supportata da dati, modelli e una stima chiara del ritorno.",
-      "Mi occupo di contesti complessi — portafogli multi-sito, processi industriali ad alto consumo, operazioni di M&A con una componente energetica rilevante."
-    ],
-    "highlights": [
-      { "title": "Indipendenza", "description": "Nessuna commissione da vendor o EPC: consiglio solo ciò che conviene al cliente." },
-      { "title": "Metodo", "description": "Dati, modelli e benchmark di settore alla base di ogni decisione." },
-      { "title": "Impatto", "description": "Obiettivi misurabili, responsabilità chiare e reporting per il top management." }
-    ],
-    "signature": "Antonio Brescia",
-    "photoAlt": "Ritratto di Antonio Brescia, Senior Energy Consultant"
-  },
   "process": {
-    "eyebrow": "Metodo",
     "title": "Come lavoriamo insieme",
     "subtitle": "Un percorso in quattro fasi, con deliverable chiari e sempre un interlocutore unico.",
     "steps": [
-      { "number": "01", "title": "Diagnosi", "description": "Analisi di consumi, contratti e asset in 2–3 settimane, con un quadro chiaro di costi e rischi." },
-      { "number": "02", "title": "Strategia", "description": "Piano d'azione prioritizzato per impatto, costi e fattibilità, con business case e KPI." },
-      { "number": "03", "title": "Esecuzione", "description": "Gestione di fornitori, pratiche e cantieri, con controllo costi e tempistiche." },
-      { "number": "04", "title": "Misura e reporting", "description": "Verifica dei risparmi (M&V), ottimizzazione continua e report per il management." }
-    ]
+      { "title": "Diagnosi", "description": "Analisi di consumi, contratti e asset in 2–3 settimane, con un quadro chiaro di costi e rischi.", "duration": "2–3 settimane" },
+      { "title": "Strategia", "description": "Piano d'azione prioritizzato per impatto, costi e fattibilità, con business case e KPI.", "duration": "1–2 settimane" },
+      { "title": "Esecuzione", "description": "Gestione di fornitori, pratiche e cantieri, con controllo costi e tempistiche.", "duration": "3–12 mesi" },
+      { "title": "Misura e reporting", "description": "Verifica dei risparmi (M&V), ottimizzazione continua e report per il management.", "duration": "Continua" }
+    ],
+    "outcome": "Il risultato: un business case con i KPI, un piano esecutivo con i fornitori e la misura dei risparmi nel tempo. Un solo interlocutore, dall'audit alla verifica."
   },
   "credentials": {
-    "eyebrow": "Credenziali",
-    "title": "Esperienza, formazione e riconoscimenti",
+    "title": "Esperienza e riconoscimenti",
     "subtitle": "Una carriera costruita tra utility, industria e finanza, con un focus costante sull'esecuzione.",
-    "stats": [
-      { "value": "15+", "label": "Anni nel settore energetico" },
-      { "value": "200+", "label": "Progetti di efficienza conseguiti" },
-      { "value": "12", "label": "Paesi in cui ho operato" },
-      { "value": "4", "label": "Certificazioni professionali" }
-    ],
+    "certificationsTitle": "Certificazioni e riconoscimenti",
     "certifications": [
       "Energy Manager certificato (D.M. 16/03/2005)",
       "Lead Auditor ISO 50001",
       "Certified Measurement & Verification Professional (CMVP)",
       "CFA Institute — Certificate in ESG Investing"
     ],
+    "timelineTitle": "Percorso professionale",
     "timeline": [
       { "period": "2018 — oggi", "role": "Senior Energy Consultant", "org": "Consulenza indipendente" },
       { "period": "2011 — 2018", "role": "Head of Energy Management", "org": "Gruppo industriale" },
@@ -164,10 +162,10 @@
     ]
   },
   "testimonials": {
-    "eyebrow": "Referenze",
     "title": "Cosa dicono i clienti",
     "subtitle": "Risultati misurabili e relazioni di lungo periodo. Nomi e cifre dimostrativi, da sostituire con le sue referenze reali.",
-    "disclaimer": "⚠️ Contenuti dimostrativi: sostituire con referenze reali e autorizzate.",
+    "disclaimer": "Contenuti dimostrativi: le testimonianze qui riportate vanno sostituite con referenze reali e autorizzate prima del lancio.",
+    "photoCaption": "Una cabina elettrica all'aperto: la porzione di rete che nessuno guarda, ma che detta il prezzo dell'energia.",
     "items": [
       {
         "quote": "Antonio ha ridisegnato la nostra strategia di acquisto energia, portando il costo unitario a un livello mai raggiunto prima. Il modello di reporting è diventato lo standard di gruppo.",
@@ -190,8 +188,7 @@
     ]
   },
   "faq": {
-    "eyebrow": "Domande frequenti",
-    "title": "Le risposte che servono prima di iniziare",
+    "title": "Le risposte che servono",
     "subtitle": "Se non trova la sua domanda, scriva pure: rispondo di persona.",
     "items": [
       {
@@ -217,16 +214,16 @@
     ]
   },
   "cta": {
-    "eyebrow": "Parliamone",
-    "title": "Hai un obiettivo energetico? Lo rendiamo misurabile.",
-    "subtitle": "Prenota 30 minuti di conversazione. Analizzo la tua situazione e ti dico subito se e come posso aiutarti — senza impegno.",
+    "title": "Hai un obiettivo energetico?",
+    "subtitle": "Lo rendiamo misurabile. Prenota 30 minuti di conversazione: analizzo la tua situazione e ti dico subito se e come posso aiutarti, senza impegno.",
     "primary": "Prenota una chiamata",
     "secondary": "Scrivimi"
   },
   "contact": {
-    "eyebrow": "Contatti",
     "title": "Richiedi una consulenza",
     "subtitle": "Raccontami il tuo obiettivo: ti ricontatto entro un giorno lavorativo con una prima valutazione.",
+    "introLine": "Antonio Brescia, consulenza energetica indipendente per imprese, fondi e asset manager.",
+    "photoCaption": "Milano, vista dal Duomo: la base da cui opero sui progetti in tutta Europa.",
     "form": {
       "title": "Il tuo briefing",
       "name": "Nome e cognome",
@@ -296,32 +293,16 @@
     "rights": "Tutti i diritti riservati.",
     "privacy": "Privacy policy",
     "piva": "P.IVA",
-    "independent": "Consulenza indipendente · Nessuna commissione da fornitori"
-  },
-  "mission": {
-    "eyebrow": "Mission & Vision",
-    "title": "Perché esisto",
-    "missionTitle": "Mission",
-    "mission": "Rendere l'energia una variabile gestibile: aiutare imprese e investitori a ridurre i costi energetici, proteggere la redditività e costruire un percorso credibile di decarbonizzazione — con metodo, dati e indipendenza.",
-    "visionTitle": "Vision",
-    "vision": "Un mercato in cui l'efficienza energetica non è un obbligo burocratico ma la decisione economica più razionale che un'organizzazione possa prendere.",
-    "principlesTitle": "I principi che non negozio",
-    "principles": [
-      { "title": "Indipendenza", "description": "Nessuna commissione da fornitori o EPC: il mio consiglio non cambia mai in funzione di chi lo paga." },
-      { "title": "Evidenza", "description": "Ogni raccomandazione poggia su dati verificabili, benchmark e assunzioni dichiarate." },
-      { "title": "Semplicità", "description": "Un deliverable che il management può usare subito vale più di un rapporto impeccabile e inutilizzabile." },
-      { "title": "Continuità", "description": "Il valore nasce nel tempo, dal riesame periodico e dalla verifica dei risultati." }
-    ]
+    "independent": "Consulenza indipendente · Nessuna commissione da fornitori",
+    "photoCredits": "Le fotografie e il video provengono da Wikimedia Commons (Tobi Kellner, Daniel Case, PtiBzh) e sono usati con licenza CC BY-SA o CC0: mostrano il mondo dell'energia, non clienti."
   },
   "blogPreview": {
-    "eyebrow": "Approfondimenti",
-    "title": "Dal blog",
+    "title": "Approfondimenti",
     "subtitle": "Note pratiche su obblighi, incentivi, contratti e metodo di misura. Scritte per chi deve prendere decisioni, non per riempiree pagine.",
-    "allPosts": "Leggi l'articolo",
+    "allPosts": "Tutti gli articoli",
     "readingTime": "Lettura"
   },
   "newsletter": {
-    "eyebrow": "Newsletter",
     "title": "Un aggiornamento, quando serve.",
     "subtitle": "Ricevi le analisi più utili su incentivi, obblighi e mercato dell'energia. Nessun aggiornamento commerciale, nessuna newsletter automatica: solo contenuti che avrei scritto per un collega.",
     "emailLabel": "Indirizzo email",
@@ -337,15 +318,15 @@
     "consentRequired": "Devi accettare l'informativa privacy per iscriverti."
   },
   "servicesPage": {
-    "eyebrow": "Servizi",
     "title": "Cosa posso fare per te",
     "subtitle": "Sei interventi, ciascuno con un perimetro, un deliverable e un responsabile. Non vendo prodotti: faccio chiarezza su cosa conviene fare e cosa no.",
+    "photoCaption": "Un impianto fotovoltaico visto dall'alto: da una scelta tecnica a una scelta economica.",
     "backToHome": "Torna alla home"
   },
   "blogPage": {
-    "eyebrow": "Blog",
     "title": "Approfondimenti",
     "subtitle": "Obblighi, incentivi, contratti e metodo di misura, spiegati con la lente di chi opera sul campo.",
+    "photoCaption": "Milano: la città in cui opero e i consumi che misuro.",
     "readingTime": "Lettura",
     "allPosts": "Tutti gli articoli",
     "empty": "Non ci sono ancora articoli pubblicati."
@@ -359,7 +340,8 @@
     "contactBody": "Descrivi la tua situazione: ti rispondo con una prima valutazione onesta, anche se la risposta è che non ti serve un consulente.",
     "contactCta": "Richiedi una consulenza",
     "readMore": "Approfondisci",
-    "allServices": "Tutti i servizi"
+    "allServices": "Tutti i servizi",
+    "photoCaption": "Una cabina elettrica: il punto in cui l'energia entra nel sito e comincia la misura."
   },
   "postDetail": {
     "home": "Home",
@@ -370,6 +352,7 @@
     "contactTitle": "Hai una domanda su questo tema?",
     "contactBody": "Se l'articolo ha sollevato un caso concreto, scrivimi: rispondo entro un giorno lavorativo.",
     "contactCta": "Richiedi una consulenza",
-    "authorRole": "Senior Energy Consultant"
+    "authorRole": "Senior Energy Consultant",
+    "photoCaption": "Un impianto fotovoltaico visto dall'alto: righe di pannelli, una scelta tecnica che diventa economica."
   }
 }

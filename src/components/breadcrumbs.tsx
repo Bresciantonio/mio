@@ -33,8 +33,8 @@ export function Breadcrumbs({
     <nav aria-label="Breadcrumb" className={className}>
       <ol
         className={cn(
-          "flex flex-wrap items-center gap-1.5 text-sm",
-          isDark ? "text-ink-300" : "text-ink-500",
+          "flex flex-wrap items-center gap-1.5 text-small",
+          isDark ? "text-ink-300" : "text-ink-600",
         )}
       >
         {items.map((item, index) => {
@@ -62,7 +62,7 @@ export function Breadcrumbs({
                 )}
               </li>
               {isLast ? null : (
-                <li aria-hidden="true" className="text-ink-400">
+                <li aria-hidden="true" className="text-ink-500">
                   /
                 </li>
               )}

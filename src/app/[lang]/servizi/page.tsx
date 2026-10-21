@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { Icon, type IconName } from "@/components/icons";
+import { Icon } from "@/components/icons";
 import { JsonLd, breadcrumbJsonLd, serviceJsonLd } from "@/components/json-ld";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
@@ -65,73 +66,75 @@ export default async function ServicesPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-ink-100 bg-paper">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-32 -right-24 size-[28rem] rounded-full bg-brand-100/50 blur-3xl"
-        />
-        <div className="container-shell relative py-14 sm:py-20">
+      <section className="bg-paper pt-14 sm:pt-20">
+        <div className="container-shell">
           <Breadcrumbs locale={locale} className="mb-8" items={crumbs} />
-          <div className="max-w-3xl">
-            <p className="eyebrow text-brand-600">
-              <span className="h-px w-6 bg-current" aria-hidden="true" />
-              {dict.servicesPage.eyebrow}
-            </p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-balance text-ink-950 sm:text-5xl lg:leading-[1.08]">
-              {dict.servicesPage.title}
-            </h1>
-            <p className="mt-5 text-lg leading-relaxed text-pretty text-ink-600">
-              {dict.servicesPage.subtitle}
-            </p>
+          <div className="max-w-4xl">
+            <Reveal>
+              <h1 className="text-article font-bold text-balance text-ink-950">
+                {dict.servicesPage.title}
+              </h1>
+              <p className="mt-6 max-w-[56ch] text-lead text-pretty text-ink-800">
+                {dict.servicesPage.subtitle}
+              </p>
+            </Reveal>
           </div>
         </div>
+
+        <Reveal delay={80}>
+          <figure className="container-shell mt-12">
+            <div className="relative aspect-21/9 w-full overflow-hidden bg-ink-900">
+              <Image
+                src="/images/aerial-picture-of-an-agrivoltaics-solar-plant.jpg"
+                alt="Aerial view of a solar plant: rows of photovoltaic panels between strips of grass"
+                fill
+                sizes="(min-width: 1024px) 1200px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-micro text-ink-600">
+              {dict.servicesPage.photoCaption}
+            </figcaption>
+          </figure>
+        </Reveal>
       </section>
 
       {/* List */}
       <Section tone="white">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-12">
           {services.map((service, index) => (
-            <Reveal key={service.slug} delay={(index % 2) * 90}>
-              <article className="card group relative flex h-full flex-col overflow-hidden p-8 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
-                <div
-                  aria-hidden="true"
-                  className="absolute -top-16 -right-16 size-36 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-[1.8]"
-                />
-                <div className="relative">
-                  <span className="grid size-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
-                    <Icon
-                      name={service.icon as IconName}
-                      className="size-6"
-                    />
-                  </span>
-                  <h2 className="mt-5 text-xl font-semibold tracking-tight text-ink-950">
-                    {service.title}
-                  </h2>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-600">
-                    {service.shortDescription}
-                  </p>
-
+            <Reveal key={service.slug} delay={(index % 2) * 60}>
+              <article className="grid gap-4 lg:grid-cols-12 lg:gap-8">
+                <h2 className="text-subtitle leading-snug font-semibold text-balance text-ink-950 lg:col-span-5">
                   <Link
                     href={localizePath(locale, `/servizi/${service.slug}`)}
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 transition group-hover:text-brand-800"
+                    className="transition hover:text-brand-700"
+                  >
+                    {service.title}
+                  </Link>
+                </h2>
+                <div className="lg:col-span-6 lg:col-start-7">
+                  <p className="max-w-[56ch] text-body text-ink-800">
+                    {service.shortDescription}
+                  </p>
+                  <Link
+                    href={localizePath(locale, `/servizi/${service.slug}`)}
+                    className="mt-4 inline-flex items-center gap-2 text-small font-semibold text-brand-700 transition hover:text-brand-800"
                   >
                     {dict.serviceDetail.readMore}
-                    <Icon
-                      name="arrow-right"
-                      className="size-4 transition group-hover:translate-x-0.5"
-                    />
+                    <Icon name="arrow-right" className="size-4" />
                   </Link>
                 </div>
-
-                <JsonLd
-                  data={serviceJsonLd({
-                    name: service.title,
-                    description: service.metaDescription,
-                    url: `${site.url}/${locale}/servizi/${service.slug}`,
-                    providerName: site.name,
-                  })}
-                />
               </article>
+
+              <JsonLd
+                data={serviceJsonLd({
+                  name: service.title,
+                  description: service.metaDescription,
+                  url: `${site.url}/${locale}/servizi/${service.slug}`,
+                  providerName: site.name,
+                })}
+              />
             </Reveal>
           ))}
         </div>

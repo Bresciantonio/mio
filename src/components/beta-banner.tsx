@@ -12,10 +12,10 @@ export function BetaBanner({ dict }: { dict: Messages }) {
   return (
     <div className="bg-accent-50">
       <div className="container-shell flex flex-col items-center gap-1 py-2.5 text-center sm:flex-row sm:justify-center sm:gap-3 sm:text-left">
-        <span className="text-xs font-semibold tracking-[0.16em] text-accent-700 uppercase">
+        <span className="text-small font-semibold text-accent-800">
           {dict.beta.label}
         </span>
-        <p className="text-[13px] leading-snug text-accent-900/85">
+        <p className="text-micro leading-snug text-accent-900/85">
           {dict.beta.message}
         </p>
       </div>

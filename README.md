@@ -93,6 +93,7 @@ src/
 │  └─ opengraph-image.tsx
 ├─ components/                    # componenti UI (Server Components)
 │  ├─ beta-banner.tsx             # banner di versione beta
+│  ├─ calculator.tsx              # calcolatore risparmio energetico
 │  └─ ...
 ├─ content/                       # ← CONTENUTI EDITORIALI (TS, non JSON)
 │  ├─ types.ts
@@ -104,7 +105,47 @@ src/
 │  └─ site.ts                     # ⚠️ dati di contatto: DA COMPILARE + stato beta
 ├─ messages/                      # dizionari UI (it.json / en.json)
 └─ proxy.ts                       # redirect locale
+public/images/                    # fotografie e video (Wikimedia Commons)
 ```
+
+---
+
+## Design
+
+Il frontend è stato riallineato alla **taste skill** (`design-taste-frontend`):
+tipografia a cinque passi, nessuna card, nessun gradiente decorativo, nessuna
+ombra su elementi fermi, sezioni con composizioni diverse, quattro fotografie
+reali e un video.
+
+- **Scala tipografica**: `--text-display` / `--text-article` / `--text-title` /
+  `--text-subtitle` / `--text-lead` / `--text-body` / `--text-small` /
+  `--text-micro`, definite in `src/app/globals.css` (Tailwind v4, CSS-first).
+  Il corpo del testo è a 17px; niente sotto i 13px.
+- **Live thing**: il calcolatore in `src/components/calculator.tsx` — l'ospite
+  inserisce la spesa energetica annua e legge l'ordine di grandezza del
+  risparmio. Il modello (8–15%) è dichiarato in pagina e non è un preventivo.
+- **Immagini**: fotografie reali del mondo dell'energia scaricate da Wikimedia
+  Commons, con credito in `public/images/credits.json` e crediti a piè di pagina
+  in `src/messages/*.json` → `footer.photoCredits`. Le riprese mostrano impianti,
+  cabine e la città: **non** ritraggono clienti.
+
+| File | Credito | Licenza |
+| --- | --- | --- |
+| `aerial-picture-of-an-agrivoltaics-solar-plant.jpg` | Tobi Kellner | CC BY-SA 4.0 |
+| `agrivoltaics-pilot-plant-at-heggelbach-farm-in.webm` (+ poster) | Tobi Kellner | CC0 |
+| `pont-l-abbe-high-voltage-substation-18.jpg` | PtiBzh | CC0 |
+| `pont-l-abbe-high-voltage-substation-14.jpg` | PtiBzh | CC0 |
+| `full-milan-skyline-from-duomo-roof.jpg` | Daniel Case | CC BY-SA 3.0 |
+
+Per rigenerare l'elenco dei crediti:
+
+```bash
+node .agents/skills/design-taste-frontend/scripts/assets.mjs --credits --to public/images
+```
+
+> Se in futuro si aggiungono foto proprie del consulente, sostituiscono quelle
+> aperte: le immagini attuali servono a dare il materiale del mestiere, non a
+> simulare un ritratto.
 
 ---
 

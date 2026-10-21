@@ -3,6 +3,7 @@ import { lang } from "next/root-params";
 import { isLocale } from "@/lib/i18n";
 import { About } from "@/components/about";
 import { BlogPreview } from "@/components/blog-preview";
+import { Calculator } from "@/components/calculator";
 import { ContactSection } from "@/components/contact-section";
 import { Credentials } from "@/components/credentials";
 import { CtaBanner } from "@/components/cta-banner";
@@ -26,25 +27,16 @@ export default async function HomePage() {
     <>
       <Hero locale={locale} dict={dict} />
       <TrustBar dict={dict} />
-      <Mission
-        eyebrow={dict.mission.eyebrow}
-        title={dict.mission.title}
-        missionTitle={dict.mission.missionTitle}
-        mission={dict.mission.mission}
-        visionTitle={dict.mission.visionTitle}
-        vision={dict.mission.vision}
-        principlesTitle={dict.mission.principlesTitle}
-        principles={dict.mission.principles}
-      />
-      <Services locale={locale} dict={dict} />
+      <Calculator dict={dict} />
+      <Mission dict={dict} />
       <About dict={dict} />
+      <Services locale={locale} dict={dict} />
       <Process dict={dict} />
       <Credentials dict={dict} />
       <Testimonials dict={dict} />
       <BlogPreview
         locale={locale}
         labels={{
-          eyebrow: dict.blogPreview.eyebrow,
           title: dict.blogPreview.title,
           subtitle: dict.blogPreview.subtitle,
           allPosts: dict.blogPreview.allPosts,
@@ -52,7 +44,6 @@ export default async function HomePage() {
         }}
       />
       <Faq
-        eyebrow={dict.faq.eyebrow}
         title={dict.faq.title}
         subtitle={dict.faq.subtitle}
         items={dict.faq.items}

@@ -131,19 +131,19 @@ export function PrivacyContent({ locale }: PrivacyContentProps) {
 
   return (
     <article className="mx-auto max-w-3xl">
-      <p className="text-sm text-ink-500">{data.updated}</p>
-      <p className="mt-5 text-base leading-relaxed text-ink-700">{data.intro}</p>
+      <p className="text-small text-ink-600">{data.updated}</p>
+      <p className="mt-5 text-lead leading-relaxed text-ink-800">{data.intro}</p>
 
       <div className="mt-8 space-y-8">
         {data.sections.map((section) => (
           <section key={section.heading}>
-            <h2 className="text-lg font-semibold text-ink-950">
+            <h2 className="text-subtitle font-semibold text-ink-950">
               {section.heading}
             </h2>
             {section.body.map((paragraph, index) => (
               <p
                 key={index}
-                className="mt-3 text-sm leading-relaxed text-ink-600"
+                className="mt-3 text-body leading-relaxed text-ink-800"
               >
                 {paragraph}
               </p>
@@ -152,13 +152,13 @@ export function PrivacyContent({ locale }: PrivacyContentProps) {
         ))}
       </div>
 
-      <div className="mt-10 rounded-2xl border border-ink-100 bg-paper p-6">
-        <h2 className="flex items-center gap-2 text-lg font-semibold text-ink-950">
+      <div className="mt-10 bg-paper p-6">
+        <h2 className="flex items-center gap-2 text-subtitle font-semibold text-ink-950">
           <Icon name="mail" className="size-5 text-brand-600" />
           {data.contactHeading}
         </h2>
         {data.contactBody.map((paragraph, index) => (
-          <p key={index} className="mt-3 text-sm leading-relaxed text-ink-600">
+          <p key={index} className="mt-3 text-body leading-relaxed text-ink-800">
             {paragraph}
           </p>
         ))}

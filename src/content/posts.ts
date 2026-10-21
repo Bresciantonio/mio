@@ -16,7 +16,7 @@ export const posts: Localized<PostContent[]> = {
   it: [
     {
       slug: "diagnosi-energetica-obbligatoria",
-      title: "Diagnosi energetica obbligatoria: chi deve farla e cosa rischi",
+      title: "Diagnosi energetica obbligatoria",
       excerpt:
         "Grandi imprese e imprese energivore hanno un obbligo quadriennale. Ecco chi rientra davvero, come funziona l'iter ENEA e qual è il costo reale di non adempiere.",
       metaDescription:
@@ -76,7 +76,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "iso-50001-o-audit-energetico",
-      title: "ISO 50001 o audit energetico? Come scegliere lo strumento giusto",
+      title: "ISO 50001 o audit energetico",
       excerpt:
         "Sono due strumenti diversi con obiettivi diversi, e vengono spesso confusi. Ecco una matrice decisionale onesta, con i casi in cui servono entrambi.",
       metaDescription:
@@ -135,7 +135,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "ppa-corporate-guida",
-      title: "PPA corporate: quando conviene e come si struttura",
+      title: "PPA corporate: quando conviene",
       excerpt:
         "Il power purchase agreement è la copertura più-discussa e meno-compresa. Guida ai casi in cui conviene, alle variabili che contano e agli errori da evitare in negoziazione.",
       metaDescription:
@@ -193,7 +193,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "credito-imposta-e-iperammortamento",
-      title: "Credito d'imposta energetico e iperammortamento: come funzionano",
+      title: "Credito d'imposta e iperammortamento",
       excerpt:
         "Due incentivi che spesso si confondono, con regole e soglie diverse. Una guida chiara su come funzionano, quando convengono e gli errori da non fare.",
       metaDescription:
@@ -251,7 +251,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "kpi-energy-management",
-      title: "I KPI che servono per governare i consumi energetici",
+      title: "I KPI per governare i consumi",
       excerpt:
         "Misurare la bolletta non è governare l'energia. Gli indicatori che distinguono un sistema di gestione efficace da un semplice report mensile.",
       metaDescription:
@@ -307,7 +307,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "titoli-efficienza-energetica-tee",
-      title: "Titoli di Efficienza Energetica (TEE): come generarli e monetizzarli",
+      title: "Titoli di efficienza energetica",
       excerpt:
         "Ogni intervento con risparmio misurabile genera un titolo negoziabile. Come funziona il meccanismo, quando conviene e cosa serve davvero per non lasciare valore sul tavolo.",
       metaDescription:
@@ -366,7 +366,7 @@ export const posts: Localized<PostContent[]> = {
   en: [
     {
       slug: "diagnosi-energetica-obbligatoria",
-      title: "Mandatory energy audit: who must do it and what it costs you",
+      title: "The mandatory energy audit",
       excerpt:
         "Large enterprises and energy-intensive companies carry a four-year obligation. Here is who genuinely falls inside it, how the ENEA process works and the real cost of non-compliance.",
       metaDescription:
@@ -426,7 +426,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "iso-50001-o-audit-energetico",
-      title: "ISO 50001 or an energy audit? Choosing the right instrument",
+      title: "ISO 50001 or an energy audit",
       excerpt:
         "They are different instruments with different purposes, and they are frequently confused. Here is an honest decision matrix, including when you need both.",
       metaDescription:
@@ -485,7 +485,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "ppa-corporate-guida",
-      title: "Corporate PPAs: when they pay off and how to structure them",
+      title: "Corporate PPAs: when they pay off",
       excerpt:
         "The power purchase agreement is the most discussed and least understood coverage instrument. A guide to when it makes sense, the variables that matter and the mistakes to avoid in negotiation.",
       metaDescription:
@@ -543,7 +543,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "credito-imposta-e-iperammortamento",
-      title: "Energy tax credits and hyper-amortisation: how they actually work",
+      title: "Energy tax credits and hyper-amortisation",
       excerpt:
         "Two incentives that are often confused, with different rules and thresholds. A clear guide to how they work, when they pay off and the mistakes to avoid.",
       metaDescription:
@@ -601,7 +601,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "kpi-energy-management",
-      title: "The KPIs that actually help you govern energy consumption",
+      title: "The KPIs that govern energy use",
       excerpt:
         "Measuring the bill is not governing energy. These are the indicators that separate a working management system from a monthly report.",
       metaDescription:
@@ -657,7 +657,7 @@ export const posts: Localized<PostContent[]> = {
     },
     {
       slug: "titoli-efficienza-energetica-tee",
-      title: "White certificates (TEE): how to generate and monetise them",
+      title: "White certificates: how to monetise",
       excerpt:
         "Every intervention with a measurable saving generates a tradable certificate. How the mechanism works, when it is worth pursuing and what is genuinely needed to avoid leaving value on the table.",
       metaDescription:

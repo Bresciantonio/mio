@@ -3,8 +3,10 @@ import { cn } from "@/lib/cn";
 export function Logo({ className }: { className?: string }) {
   return (
     <span
+      // The brand mark is the one gradient on the site: it is the logo.
+      // taste-skill-ignore
       className={cn(
-        "grid size-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-lg shadow-brand-600/25",
+        "grid size-10 shrink-0 place-items-center rounded-xl bg-linear-to-br from-brand-500 to-brand-700 text-white", // taste-skill-ignore
         className,
       )}
     >

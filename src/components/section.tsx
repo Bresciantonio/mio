@@ -21,11 +21,7 @@ export function Section({ id, tone = "white", className, children }: SectionProp
   return (
     <section
       id={id}
-      className={cn(
-        "scroll-mt-24 py-20 sm:py-24 lg:py-28",
-        tones[tone],
-        className,
-      )}
+      className={cn("scroll-mt-24 py-16 sm:py-24", tones[tone], className)}
     >
       <div className="container-shell">{children}</div>
     </section>
@@ -33,7 +29,6 @@ export function Section({ id, tone = "white", className, children }: SectionProp
 }
 
 interface SectionHeaderProps {
-  eyebrow: string;
   title: string;
   subtitle?: string;
   align?: "left" | "center";
@@ -41,11 +36,17 @@ interface SectionHeaderProps {
   className?: string;
 }
 
+/**
+ * Section heading.
+ *
+ * No label above the title: the title says which section it is and the
+ * sentence under it says what it holds. Headings are left-aligned — the page
+ * has one centred moment at most, and it is not this one.
+ */
 export function SectionHeader({
-  eyebrow,
   title,
   subtitle,
-  align = "center",
+  align = "left",
   tone = "white",
   className,
 }: SectionHeaderProps) {
@@ -60,20 +61,9 @@ export function SectionHeader({
         className,
       )}
     >
-      <p
-        className={cn(
-          "eyebrow",
-          centered && "justify-center",
-          isDark ? "text-brand-300" : "text-brand-600",
-        )}
-      >
-        <span className="h-px w-6 bg-current" aria-hidden="true" />
-        {eyebrow}
-        {centered && <span className="h-px w-6 bg-current" aria-hidden="true" />}
-      </p>
       <h2
         className={cn(
-          "mt-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-[2.6rem] lg:leading-[1.1]",
+          "text-title font-bold text-balance",
           isDark ? "text-white" : "text-ink-950",
         )}
       >
@@ -82,8 +72,8 @@ export function SectionHeader({
       {subtitle ? (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed text-pretty sm:text-lg",
-            isDark ? "text-ink-100/80" : "text-ink-600",
+            "mt-5 text-body text-pretty",
+            isDark ? "text-ink-100/80" : "text-ink-800",
           )}
         >
           {subtitle}

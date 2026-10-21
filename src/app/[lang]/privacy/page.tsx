@@ -4,7 +4,6 @@ import { lang } from "next/root-params";
 import { isLocale } from "@/lib/i18n";
 import { site } from "@/lib/site";
 import { PrivacyContent } from "@/components/privacy-content";
-import { getDictionary } from "../dictionaries";
 
 interface PrivacyPageProps {
   params: Promise<{ lang: string }>;
@@ -40,16 +39,10 @@ export default async function PrivacyPage() {
   const locale = await lang();
   if (!isLocale(locale)) notFound();
 
-  const dict = await getDictionary();
-
   return (
-    <section className="bg-white py-20 sm:py-24 lg:py-28">
+    <section className="bg-white py-16 sm:py-24">
       <div className="container-shell">
-        <p className="eyebrow text-brand-600">
-          <span className="h-px w-6 bg-current" aria-hidden="true" />
-          {dict.footer.privacy}
-        </p>
-        <h1 className="mt-4 text-3xl font-bold tracking-tight text-ink-950 sm:text-4xl">
+        <h1 className="text-display font-bold text-ink-950">
           {locale === "it" ? "Privacy policy" : "Privacy policy"}
         </h1>
         <div className="mt-10">

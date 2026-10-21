@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { lang } from "next/root-params";
@@ -62,12 +63,8 @@ export default async function BlogPage() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-ink-100 bg-paper">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-32 -left-24 size-[26rem] rounded-full bg-brand-100/40 blur-3xl"
-        />
-        <div className="container-shell relative py-14 sm:py-20">
+      <section className="bg-paper py-14 sm:py-20">
+        <div className="container-shell">
           <Breadcrumbs
             locale={locale}
             className="mb-8"
@@ -76,24 +73,22 @@ export default async function BlogPage() {
               { label: dict.postDetail.blog },
             ]}
           />
-          <div className="max-w-3xl">
-            <p className="eyebrow text-brand-600">
-              <span className="h-px w-6 bg-current" aria-hidden="true" />
-              {dict.blogPage.eyebrow}
-            </p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-balance text-ink-950 sm:text-5xl lg:leading-[1.08]">
-              {dict.blogPage.title}
-            </h1>
-            <p className="mt-5 text-lg leading-relaxed text-pretty text-ink-600">
-              {dict.blogPage.subtitle}
-            </p>
+          <div className="max-w-4xl">
+            <Reveal>
+              <h1 className="text-article font-bold text-balance text-ink-950">
+                {dict.blogPage.title}
+              </h1>
+              <p className="mt-6 max-w-[56ch] text-lead text-pretty text-ink-800">
+                {dict.blogPage.subtitle}
+              </p>
+            </Reveal>
 
             {categories.length > 0 ? (
-              <ul className="mt-7 flex flex-wrap gap-2">
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
                 {categories.map((category) => (
                   <li
                     key={category}
-                    className="rounded-full bg-white px-3 py-1.5 text-xs font-medium text-ink-600 ring-1 ring-ink-100"
+                    className="text-small font-medium text-ink-800"
                   >
                     {category}
                   </li>
@@ -102,62 +97,57 @@ export default async function BlogPage() {
             ) : null}
           </div>
         </div>
+
+        <Reveal delay={80}>
+          <figure className="container-shell mt-12">
+            <div className="relative aspect-21/9 w-full overflow-hidden bg-ink-900">
+              <Image
+                src="/images/full-milan-skyline-from-duomo-roof.jpg"
+                alt="The skyline of Milan seen from the roof of the Duomo"
+                fill
+                sizes="(min-width: 1024px) 1200px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="mt-3 text-micro text-ink-600">
+              {dict.blogPage.photoCaption}
+            </figcaption>
+          </figure>
+        </Reveal>
       </section>
 
       {/* List */}
       <Section tone="white">
         {posts.length === 0 ? (
-          <p className="text-center text-ink-500">{dict.blogPage.empty}</p>
+          <p className="text-body text-ink-600">{dict.blogPage.empty}</p>
         ) : (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-12">
             {posts.map((post, index) => (
-              <Reveal key={post.slug} delay={(index % 3) * 90}>
-                <article className="card group flex h-full flex-col p-7 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5">
-                  <div className="flex items-center gap-3 text-xs">
-                    <span className="rounded-full bg-brand-50 px-2.5 py-1 font-semibold text-brand-700">
-                      {post.category}
-                    </span>
-                    <span className="text-ink-500">
-                      <time dateTime={post.date}>
-                        {formatDate(post.date, locale)}
-                      </time>
-                    </span>
-                  </div>
-
-                  <h2 className="mt-4 text-lg leading-snug font-semibold tracking-tight text-ink-950">
-                    <Link href={localizePath(locale, `/blog/${post.slug}`)}>
+              <Reveal key={post.slug} delay={(index % 3) * 60}>
+                <article className="grid gap-4 lg:grid-cols-12 lg:gap-8">
+                  <h2 className="text-subtitle leading-snug font-semibold text-balance text-ink-950 lg:col-span-6">
+                    <Link
+                      href={localizePath(locale, `/blog/${post.slug}`)}
+                      className="transition hover:text-brand-700"
+                    >
                       {post.title}
                     </Link>
                   </h2>
-
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-600">
-                    {post.excerpt}
-                  </p>
-
-                  <ul className="mt-4 flex flex-wrap gap-1.5">
-                    {post.tags.slice(0, 3).map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full bg-ink-50 px-2.5 py-1 text-[11px] font-medium text-ink-600"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-5 flex items-center justify-between border-t border-ink-100 pt-4 text-sm">
-                    <span className="text-ink-500">
-                      {dict.blogPage.readingTime} {post.readingTime}
-                    </span>
+                  <div className="lg:col-span-5 lg:col-start-8">
+                    <p className="text-body text-ink-800">{post.excerpt}</p>
+                    <p className="mt-3 text-small text-ink-600">
+                      {post.category} ·{" "}
+                      <time dateTime={post.date}>
+                        {formatDate(post.date, locale)}
+                      </time>{" "}
+                      · {dict.blogPage.readingTime} {post.readingTime}
+                    </p>
                     <Link
                       href={localizePath(locale, `/blog/${post.slug}`)}
-                      className="inline-flex items-center gap-1.5 font-semibold text-brand-700 transition group-hover:text-brand-800"
+                      className="mt-4 inline-flex items-center gap-2 text-small font-semibold text-brand-700 transition hover:text-brand-800"
                     >
                       {dict.blogPreview.allPosts}
-                      <Icon
-                        name="arrow-right"
-                        className="size-4 transition group-hover:translate-x-0.5"
-                      />
+                      <Icon name="arrow-right" className="size-4" />
                     </Link>
                   </div>
                 </article>

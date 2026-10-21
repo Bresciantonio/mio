@@ -95,6 +95,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           contactCta: dict.serviceDetail.contactCta,
           readMore: dict.serviceDetail.readMore,
           allServices: dict.serviceDetail.allServices,
+          photoCaption: dict.serviceDetail.photoCaption,
         }}
       />
     </>

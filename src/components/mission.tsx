@@ -1,94 +1,56 @@
-import { Icon, type IconName } from "./icons";
+import type { Messages } from "@/messages";
 import { Reveal } from "./reveal";
-import { Section, SectionHeader } from "./section";
 
 interface MissionProps {
-  eyebrow: string;
-  title: string;
-  missionTitle: string;
-  mission: string;
-  visionTitle: string;
-  vision: string;
-  principlesTitle: string;
-  principles: Array<{ title: string; description: string }>;
-  icons?: string[];
+  dict: Messages;
 }
 
 /**
- * Mission & Vision.
+ * Why the practice exists.
  *
- * The reference site states these in two short blocks near the top of the home
- * page. It works because it answers the question every corporate visitor asks
- * first — "why should I trust this company?" — before asking them to read on.
+ * Two statements set as text — a mission and a vision — and the four
+ * principles as a plain list. No cards: the difference between a claim and
+ * its list is the type size, not a border.
  */
-export function Mission({
-  eyebrow,
-  title,
-  missionTitle,
-  mission,
-  visionTitle,
-  vision,
-  principlesTitle,
-  principles,
-  icons = ["target", "leaf", "scale", "chart"],
-}: MissionProps) {
+export function Mission({ dict }: MissionProps) {
+  const { mission } = dict;
+
   return (
-    <Section tone="ink" id="mission">
-      <SectionHeader eyebrow={eyebrow} title={title} tone="ink" />
+    <section id="perche-esisto" className="bg-white py-16 sm:py-24">
+      <div className="container-shell">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <Reveal className="lg:col-span-4">
+            <h2 className="text-title font-bold text-ink-950">{mission.title}</h2>
+          </Reveal>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-2">
-        <Reveal>
-          <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-            <span className="grid size-12 place-items-center rounded-xl bg-brand-400/15 text-brand-300">
-              <Icon name="target" className="size-6" />
-            </span>
-            <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
-              {missionTitle}
-            </h3>
-            <p className="mt-3 text-base leading-relaxed text-pretty text-ink-100/80">
-              {mission}
+          <Reveal delay={80} className="lg:col-span-8">
+            <p className="max-w-3xl text-subtitle font-medium text-pretty text-ink-950">
+              {mission.mission}
             </p>
-          </div>
-        </Reveal>
+            <p className="mt-8 max-w-3xl text-lead text-pretty text-ink-800">
+              {mission.vision}
+            </p>
+          </Reveal>
+        </div>
 
-        <Reveal delay={90}>
-          <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-            <span className="grid size-12 place-items-center rounded-xl bg-brand-400/15 text-brand-300">
-              <Icon name="leaf" className="size-6" />
-            </span>
-            <h3 className="mt-5 text-xl font-semibold tracking-tight text-white">
-              {visionTitle}
-            </h3>
-            <p className="mt-3 text-base leading-relaxed text-pretty text-ink-100/80">
-              {vision}
-            </p>
-          </div>
+        <Reveal delay={140} className="mt-16 sm:mt-20">
+          <h3 className="text-subtitle font-semibold text-ink-950">
+            {mission.principlesTitle}
+          </h3>
+          <ul className="mt-8 grid gap-x-12 gap-y-8 sm:grid-cols-2">
+            {mission.principles.map((principle) => (
+              <li key={principle.title}>
+                <h4 className="text-subtitle font-semibold text-ink-950">
+                  {principle.title}
+                </h4>
+                <p className="mt-2 max-w-md text-body text-ink-800">
+                  {principle.description}
+                </p>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
-
-      <Reveal className="mt-12">
-        <h3 className="text-sm font-semibold tracking-[0.18em] text-white/60 uppercase">
-          {principlesTitle}
-        </h3>
-        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {principles.map((principle, index) => (
-            <li key={principle.title}>
-              <span className="grid size-10 place-items-center rounded-lg bg-white/10 text-brand-300">
-                <Icon
-                  name={(icons[index % icons.length] ?? "target") as IconName}
-                  className="size-5"
-                />
-              </span>
-              <h4 className="mt-4 font-semibold tracking-tight text-white">
-                {principle.title}
-              </h4>
-              <p className="mt-1.5 text-sm leading-relaxed text-ink-100/70">
-                {principle.description}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
-    </Section>
+    </section>
   );
 }

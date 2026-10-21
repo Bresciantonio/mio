@@ -1,23 +1,35 @@
+import Image from "next/image";
 import { type Locale } from "@/lib/i18n";
 import { hasAddress, hasLinkedin, hasPhone, site } from "@/lib/site";
 import type { Messages } from "@/messages";
 import { ContactForm } from "./contact-form";
 import { Icon } from "./icons";
 import { Reveal } from "./reveal";
-import { Section, SectionHeader } from "./section";
 
 interface ContactSectionProps {
   locale: Locale;
   dict: Messages;
+  /** The standalone contact page owns the h1; on the home page it is an h2. */
+  headingLevel?: "h1" | "h2";
 }
 
-export function ContactSection({ locale, dict }: ContactSectionProps) {
+/**
+ * Contact.
+ *
+ * The details are set as display rows — the way a sign on a door is — and the
+ * briefing form sits next to them. Only the details that are really filled
+ * in are published: a missing phone number does not get an invented one, it
+ * does not get printed at all.
+ */
+export function ContactSection({
+  locale,
+  dict,
+  headingLevel = "h2",
+}: ContactSectionProps) {
   const { contact } = dict;
   const { details } = contact;
 
-  // Only the details that are filled in are published: an empty value means
-  // "not confirmed yet" and the row is dropped rather than faked.
-  const items = [
+  const rows = [
     {
       icon: "mail" as const,
       label: details.emailLabel,
@@ -44,90 +56,113 @@ export function ContactSection({ locale, dict }: ContactSectionProps) {
       value: site.hours,
       href: undefined,
     },
-  ].filter((item): item is NonNullable<typeof item> => item !== null);
+  ].filter((row): row is NonNullable<typeof row> => row !== null);
 
   const missingDetails = !hasPhone || !hasAddress;
 
-  return (
-    <Section id="contatti" tone="white">
-      <SectionHeader
-        eyebrow={contact.eyebrow}
-        title={contact.title}
-        subtitle={contact.subtitle}
-      />
+  const Heading = headingLevel;
 
-      <div className="mt-14 grid gap-10 lg:grid-cols-12">
-        {/* Details */}
-        <Reveal className="lg:col-span-5">
-          <div className="flex h-full flex-col gap-6">
-            <div className="rounded-2xl border border-ink-100 bg-paper p-7">
-              <h3 className="text-base font-semibold text-ink-950">
-                {details.title}
-              </h3>
-              <ul className="mt-5 space-y-4">
-                {items.map((item) => (
-                  <li key={item.label} className="flex items-start gap-3.5">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-white text-brand-600 shadow-sm">
-                      <Icon name={item.icon} className="size-5" />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="text-xs font-medium tracking-wide text-ink-500 uppercase">
-                        {item.label}
-                      </p>
-                      {item.href ? (
+  return (
+    <section id="contatti" className="bg-white py-16 sm:py-24">
+      <div className="container-shell">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <Reveal className="lg:col-span-5">
+            <figure className="mb-10">
+              <div className="relative aspect-21/9 w-full overflow-hidden bg-ink-900">
+                <Image
+                  src="/images/full-milan-skyline-from-duomo-roof.jpg"
+                  alt="The skyline of Milan seen from the roof of the Duomo"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-micro text-ink-600">
+                {contact.photoCaption}
+              </figcaption>
+            </figure>
+
+            <Heading
+              className={
+                headingLevel === "h1"
+                  ? "text-article font-bold text-balance text-ink-950"
+                  : "text-title font-bold text-balance text-ink-950"
+              }
+            >
+              {contact.title}
+            </Heading>
+            {headingLevel === "h1" ? (
+              <p className="mt-4 max-w-[46ch] text-lead text-ink-800">
+                {contact.introLine}
+              </p>
+            ) : null}
+            <p className="mt-5 max-w-md text-body text-ink-800">
+              {contact.subtitle}
+            </p>
+
+            <Reveal delay={60}>
+              <dl className="mt-10 space-y-7">
+                {rows.map((row) => (
+                  <div key={row.label}>
+                    <dt className="flex items-center gap-2 text-small text-ink-600">
+                      <Icon name={row.icon} className="size-4 text-brand-600" />
+                      {row.label}
+                    </dt>
+                    <dd className="mt-1.5 text-subtitle leading-snug font-semibold text-ink-950">
+                      {row.href ? (
                         <a
-                          href={item.href}
-                          className="mt-0.5 block text-sm font-medium break-words text-ink-900 hover:text-brand-700"
+                          href={row.href}
+                          className="transition hover:text-brand-700"
                         >
-                          {item.value}
+                          {row.value}
                         </a>
                       ) : (
-                        <p className="mt-0.5 text-sm font-medium text-ink-900">
-                          {item.value}
-                        </p>
+                        row.value
                       )}
-                    </div>
-                  </li>
+                    </dd>
+                  </div>
                 ))}
-              </ul>
-              {missingDetails ? (
-                <p className="mt-5 border-t border-ink-100 pt-4 text-xs leading-relaxed text-ink-500">
+              </dl>
+            </Reveal>
+
+            {missingDetails ? (
+              <Reveal delay={100}>
+                <p className="mt-8 max-w-[60ch] text-small text-ink-800">
                   {details.pending}
                 </p>
-              ) : null}
-            </div>
-
-            <div className="rounded-2xl border border-brand-100 bg-brand-50 p-6">
-              <p className="flex items-center gap-2 text-sm font-semibold text-brand-800">
-                <span className="size-2 animate-pulse-soft rounded-full bg-brand-500" />
-                {details.availabilityLabel}
-              </p>
-              <p className="mt-1 text-sm text-brand-900/80">{site.availability}</p>
-            </div>
-
-            {hasLinkedin ? (
-              <a
-                href={site.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-ink-600 transition hover:text-brand-700"
-              >
-                <Icon name="linkedin" className="size-4" />
-                LinkedIn
-              </a>
+              </Reveal>
             ) : null}
-          </div>
-        </Reveal>
 
-        {/* Form */}
-        <Reveal delay={120} className="lg:col-span-7">
-          <ContactForm
-            locale={locale}
-            dict={dict}
-            services={contact.services}
-          />
-        </Reveal>
+            <Reveal delay={140}>
+              <div className="mt-8 flex flex-wrap items-center gap-6">
+                <p className="flex items-center gap-2 text-small font-medium text-ink-800">
+                  <span className="size-2 animate-pulse-soft rounded-full bg-brand-500" />
+                  {details.availabilityLabel}: {site.availability}
+                </p>
+                {hasLinkedin ? (
+                  <a
+                    href={site.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-small font-medium text-ink-800 transition hover:text-brand-700"
+                  >
+                    <Icon name="linkedin" className="size-4" />
+                    LinkedIn
+                  </a>
+                ) : null}
+              </div>
+            </Reveal>
+          </Reveal>
+
+          <Reveal delay={110} className="lg:col-span-7">
+            <ContactForm
+              locale={locale}
+              dict={dict}
+              services={contact.services}
+            />
+          </Reveal>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

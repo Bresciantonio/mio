@@ -42,5 +42,5 @@ export default async function ContactPage() {
 
   const dict = await getDictionary();
 
-  return <ContactSection locale={locale} dict={dict} />;
+  return <ContactSection locale={locale} dict={dict} headingLevel="h1" />;
 }

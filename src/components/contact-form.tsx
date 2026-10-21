@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 import type { Messages } from "@/messages";
 import { cn } from "@/lib/cn";
 import { Icon } from "./icons";
+import { Reveal } from "./reveal";
 
 interface ContactFormProps {
   locale: Locale;
@@ -118,17 +119,17 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
     return (
       <div
         role="status"
-        className="card flex h-full flex-col items-center justify-center p-10 text-center"
+        className="flex h-full flex-col items-start justify-center bg-paper p-10"
       >
         <span className="grid size-14 place-items-center rounded-full bg-brand-50 text-brand-600">
           <Icon name="check" className="size-7" />
         </span>
-        <h3 className="mt-5 text-xl font-bold text-ink-950">
+        <h3 className="mt-5 text-subtitle font-bold text-ink-950">
           {delivered
             ? dict.contact.success.title
             : dict.contact.success.pendingTitle}
         </h3>
-        <p className="mt-2 max-w-sm text-sm leading-relaxed text-ink-600">
+        <p className="mt-3 max-w-sm text-body text-ink-800">
           {delivered
             ? dict.contact.success.message.replace("{name}", submittedName)
             : dict.contact.success.pending.replace("{name}", submittedName)}
@@ -146,7 +147,7 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
 
   const fieldError = (key: FieldName | "consent") =>
     errors[key] ? (
-      <p id={`${key}-error`} className="mt-1.5 text-xs text-red-600">
+      <p id={`${key}-error`} className="mt-1.5 text-micro text-red-600">
         {errors[key]}
       </p>
     ) : null;
@@ -155,9 +156,9 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
     errors[key] ? `${key}-error` : undefined;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="card p-6 sm:p-8">
-      <h3 className="text-lg font-bold text-ink-950">{labels.title}</h3>
-      <p className="mt-1 text-sm text-ink-500">{labels.privacyNote}</p>
+    <form onSubmit={onSubmit} noValidate className="bg-paper p-6 sm:p-9">
+      <h3 className="text-subtitle font-bold text-ink-950">{labels.title}</h3>
+      <p className="mt-2 max-w-[60ch] text-body text-ink-800">{labels.privacyNote}</p>
 
       {status === "error" ? (
         <div
@@ -171,7 +172,8 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
         </div>
       ) : null}
 
-      <div className="mt-6 grid gap-5 sm:grid-cols-2">
+      <Reveal delay={90}>
+        <div className="mt-6 grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="label">
             {labels.name} <span className="text-red-500">*</span>
@@ -231,7 +233,7 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
         <div>
           <label htmlFor="phone" className="label">
             {labels.phone}{" "}
-            <span className="font-normal text-ink-400">({labels.optional})</span>
+            <span className="font-normal text-ink-800">({labels.optional})</span>
           </label>
           <input
             id="phone"
@@ -299,7 +301,7 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
         </div>
 
         <div className="sm:col-span-2">
-          <label className="flex items-start gap-3 text-sm text-ink-600">
+          <label className="flex max-w-[60ch] items-start gap-3 text-small text-ink-800">
             <input
               type="checkbox"
               checked={values.consent}
@@ -321,7 +323,8 @@ export function ContactForm({ locale, dict, services }: ContactFormProps) {
           </label>
           {fieldError("consent")}
         </div>
-      </div>
+        </div>
+      </Reveal>
 
       <button
         type="submit"
