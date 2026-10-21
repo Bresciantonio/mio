@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "title": "Antonio Brescia — Senior Energy Consultant",
+    "description": "Independent senior energy consulting for companies, funds and asset managers: audits, efficiency, renewables, PPAs and decarbonisation. Turning energy costs into a competitive advantage.",
+    "ogTitle": "Antonio Brescia — Senior Energy Consultant",
+    "ogDescription": "Lower energy costs, more predictability. Independent advice for companies and investors.",
+    "twitterCard": "summary_large_image"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "learnMore": "Learn more",
+    "getStarted": "Get started",
+    "years": "years",
+    "backToHome": "Back to home",
+    "contactCta": "Request a consultation"
+  },
+  "beta": {
+    "label": "Beta",
+    "message": "Content, references and contact details are being finalised."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "process": "Method",
+    "credentials": "Credentials",
+    "testimonials": "References",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cta": "Request a consultation"
+  },
+  "hero": {
+    "title": "Independent energy consulting",
+    "subtitle": "For companies, funds and asset managers. Energy is a cost: we run it as an asset. I cut energy bills, protect efficiency and renewable investments, and build credible decarbonisation plans — with data, not impressions.",
+    "primaryCta": "Request a consultation",
+    "secondaryCta": "Explore services",
+    "trustNote": "No commissions from suppliers or installers: independence is my method.",
+    "photoCaption": "A solar plant seen from the air: a technical choice made into an economic one.",
+    "stats": [
+      { "value": "15+", "label": "Years of experience" },
+      { "value": "200+", "label": "Efficiency projects" },
+      { "value": "12", "label": "Countries I have worked in" }
+    ]
+  },
+  "trust": {
+    "title": "Who I work with",
+    "subtitle": "Energy-intensive sectors, where every percentage point counts.",
+    "items": [
+      "Manufacturing",
+      "Real estate & funds",
+      "Retail & hospitality",
+      "Utility & energy retail",
+      "Logistics & cold chain",
+      "Public administration"
+    ]
+  },
+  "calculator": {
+    "title": "What does your energy cost you?",
+    "subtitle": "Enter the annual energy bill. The model shows the order of magnitude a full diagnosis can make reachable: an estimate, not a quote.",
+    "label": "Annual energy spend",
+    "sliderLabel": "Move the slider to change the annual energy spend",
+    "example": 800000,
+    "range": [8, 15],
+    "resultLabel": "Annual saving potential",
+    "resultNote": "The 8–15% range is the one documented in audits. The real figure is set during the diagnosis, on the consumption and contracts of each site.",
+    "disclaimer": "Indicative model for orientation only: not a quote, and it does not account for incentives, hedges or future prices."
+  },
+  "mission": {
+    "title": "Why I exist",
+    "mission": "To make energy a manageable variable: help companies and investors cut energy costs, protect profitability and build a credible decarbonisation path — with method, data and independence.",
+    "vision": "A market where energy efficiency is not a bureaucratic obligation but the most rational economic decision an organisation can take.",
+    "principlesTitle": "The principles I do not trade",
+    "principles": [
+      { "title": "Independence", "description": "No commissions from suppliers or EPCs: my advice never changes with whoever pays." },
+      { "title": "Evidence", "description": "Every recommendation rests on verifiable data, benchmarks and declared assumptions." },
+      { "title": "Clarity", "description": "A deliverable the management can use tomorrow is worth more than a flawless report nobody uses." },
+      { "title": "Continuity", "description": "Value compounds over time, through periodic review and measured results." }
+    ]
+  },
+  "about": {
+    "title": "A senior consultant, not a salesman.",
+    "paragraphs": [
+      "For more than fifteen years I have worked alongside companies and investors on energy management: from the first analysis of consumption to contract negotiation and the governance of the energy plan.",
+      "I work independently, with no commissions from suppliers or installers. My only interest is the measurable result for the client: every recommendation is backed by data, models and a clear estimate of return.",
+      "I work in complex settings — multi-site portfolios, energy-intensive industrial processes, M&A with a material energy component."
+    ],
+    "signature": "Antonio Brescia",
+    "role": "Senior Energy Consultant",
+    "photoCaption": "A transformer in a substation: where the energy enters the site, and where the measurement starts."
+  },
+  "services": {
+    "title": "Energy consulting services",
+    "subtitle": "Six engagements, each with a scope, a deliverable and one owner. I do not sell products: I make clear what is worth doing and what is not.",
+    "items": [
+      {
+        "slug": "audit-energetico-e-due-diligence",
+        "title": "Energy audits and due diligence",
+        "description": "Structured reviews of consumption, contracts and assets to assess risk and the room for optimisation before investing or acquiring.",
+        "tags": ["ISO 50001", "EPC", "Benchmarking"]
+      },
+      {
+        "slug": "gestione-dell-energia-e-iso-50001",
+        "title": "Energy management and ISO 50001",
+        "description": "Designing the energy management system: KPIs, responsibilities, monitoring and certifiable continuous improvement.",
+        "tags": ["EnMS", "KPI", "Certification"]
+      },
+      {
+        "slug": "rinnovabili-e-ppa",
+        "title": "Renewables and PPAs",
+        "description": "Technology choice, development model and contract structure for PPAs and self-consumption, to lock the price of energy over time.",
+        "tags": ["PPA", "Self-consumption", "Solar"]
+      },
+      {
+        "slug": "acquisto-energia-e-gestione-del-rischio",
+        "title": "Energy procurement and risk",
+        "description": "Procurement strategy, market timing and hedging to reduce volatility and defend the budget.",
+        "tags": ["Procurement", "Hedging", "Budget"]
+      },
+      {
+        "slug": "decarbonizzazione-e-esg",
+        "title": "Decarbonisation and ESG",
+        "description": "A roadmap to carbon neutrality, energy accounting and reporting ready for investors and auditors.",
+        "tags": ["Net Zero", "CSRD", "Reporting"]
+      },
+      {
+        "slug": "incentivi-e-certificati-bianchi",
+        "title": "Incentives and white certificates",
+        "description": "Identifying, filing and reporting on national and European incentives, without slowing the other projects down.",
+        "tags": ["GSE", "Incentives", "EU Funds"]
+      }
+    ]
+  },
+  "process": {
+    "title": "How we work together",
+    "subtitle": "A four-stage path, with clear deliverables and a single point of contact throughout.",
+    "steps": [
+      { "title": "Diagnosis", "description": "Analysis of consumption, contracts and assets in 2–3 weeks, with a clear picture of costs and risks.", "duration": "2–3 weeks" },
+      { "title": "Strategy", "description": "An action plan ranked by impact, cost and feasibility, with business case and KPIs.", "duration": "1–2 weeks" },
+      { "title": "Execution", "description": "Managing suppliers, paperwork and works, with control of costs and timelines.", "duration": "3–12 months" },
+      { "title": "Measurement and reporting", "description": "Verifying the savings (M&V), continuous improvement and reporting for the management.", "duration": "Ongoing" }
+    ],
+    "outcome": "The result: a business case with the KPIs, an execution plan with the suppliers and measured savings over time. One contact, from the audit to the verification."
+  },
+  "credentials": {
+    "title": "Experience and recognition",
+    "subtitle": "A career built across utilities, industry and finance, with a constant focus on delivery.",
+    "certificationsTitle": "Certifications and recognition",
+    "certifications": [
+      "Certified Energy Manager (D.M. 16/03/2005)",
+      "Lead Auditor ISO 50001",
+      "Certified Measurement & Verification Professional (CMVP)",
+      "CFA Institute — Certificate in ESG Investing"
+    ],
+    "timelineTitle": "Professional path",
+    "timeline": [
+      { "period": "2018 — today", "role": "Senior Energy Consultant", "org": "Independent consulting" },
+      { "period": "2011 — 2018", "role": "Head of Energy Management", "org": "Industrial group" },
+      { "period": "2006 — 2011", "role": "Energy Analyst", "org": "Utility & energy retail" }
+    ]
+  },
+  "testimonials": {
+    "title": "What clients say",
+    "subtitle": "Measurable results and long relationships. Names and figures are illustrative, to be replaced with your real references.",
+    "disclaimer": "Illustrative content: the testimonials shown here must be replaced with real, authorised references before launch.",
+    "photoCaption": "An outdoor substation: the part of the grid nobody looks at, and the one that sets the price of energy.",
+    "items": [
+      {
+        "quote": "Antonio reshaped our energy procurement strategy, bringing the unit cost to a level we had never reached. The reporting model became the group standard.",
+        "name": "Marco R.",
+        "role": "Energy Manager",
+        "company": "Manufacturing group"
+      },
+      {
+        "quote": "During the due diligence he found room for optimisation that others had missed. His work protected a significant investment.",
+        "name": "Laura B.",
+        "role": "Head of Real Assets",
+        "company": "Real estate fund"
+      },
+      {
+        "quote": "Deep practical sense and great independence. He helped us structure a solid PPA and made our decarbonisation plan credible.",
+        "name": "Davide T.",
+        "role": "CFO",
+        "company": "Retail chain"
+      }
+    ]
+  },
+  "faq": {
+    "title": "The answers you need",
+    "subtitle": "If your question is not here, write anyway: I answer personally.",
+    "items": [
+      {
+        "question": "How long does a consultation take?",
+        "answer": "It depends on the scope. An initial diagnosis takes 2–3 weeks; a full efficiency project can span 6–18 months, with periodic reviews and verification of the savings."
+      },
+      {
+        "question": "Do you work only in Italy?",
+        "answer": "No. I have worked in 12 countries and support clients with assets in different jurisdictions, remotely and with dedicated missions where needed."
+      },
+      {
+        "question": "How is the fee structured?",
+        "answer": "Per project, per result, or a mix of the two. No hidden commission: the business case is always shared before we start."
+      },
+      {
+        "question": "Do you replace my energy manager?",
+        "answer": "No. I work as senior reinforcement: I work alongside the internal team, bring method and technical skill, then transfer the capability."
+      },
+      {
+        "question": "Do you also handle the paperwork for incentives?",
+        "answer": "Yes: identification, filing, reporting and liaison with the authorities, both national and European."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Do you have an energy goal?",
+    "subtitle": "Let us make it measurable. Book 30 minutes of conversation: I look at your situation and tell you straight away whether and how I can help, with no commitment.",
+    "primary": "Book a call",
+    "secondary": "Write to me"
+  },
+  "contact": {
+    "title": "Request a consultation",
+    "subtitle": "Tell me your goal: I get back to you within one business day with a first assessment.",
+    "introLine": "Antonio Brescia, independent energy consulting for companies, funds and asset managers.",
+    "photoCaption": "Milan, seen from the Duomo: the base I work from on projects across Europe.",
+    "form": {
+      "title": "Your briefing",
+      "name": "Full name",
+      "namePlaceholder": "John Smith",
+      "email": "Email",
+      "emailPlaceholder": "john.smith@company.com",
+      "company": "Company",
+      "companyPlaceholder": "Company Ltd.",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "+44 20 0000 0000",
+      "service": "Service of interest",
+      "servicePlaceholder": "Select a service",
+      "message": "Message",
+      "messagePlaceholder": "Describe your situation and the goal briefly…",
+      "consent": "I agree to the processing of my data so I can be contacted. I have read the",
+      "consentLink": "privacy policy",
+      "submit": "Send request",
+      "sending": "Sending…",
+      "reset": "Send another request",
+      "optional": "optional",
+      "privacyNote": "Your data is used only to get back to you. No spam, ever."
+    },
+    "services": [
+      "Energy audits and due diligence",
+      "Energy management and ISO 50001",
+      "Renewables and PPAs",
+      "Energy procurement and risk",
+      "Decarbonisation and ESG",
+      "Incentives and white certificates",
+      "Other / Not sure yet"
+    ],
+    "success": {
+      "title": "Request sent",
+      "message": "Thank you, {name}. I'll get back to you within one business day.",
+      "pendingTitle": "Request recorded",
+      "pending": "Request recorded, {name}. Email delivery is not active yet: I'll get back to you directly."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "message": "Please try again shortly, or write to me directly at {email}."
+    },
+    "validation": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "That email address doesn't look valid.",
+      "messageRequired": "Please write a short message.",
+      "messageShort": "The message is too short (minimum 20 characters).",
+      "consentRequired": "You must accept the privacy notice."
+    },
+    "details": {
+      "title": "Contact details",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "officeLabel": "Office",
+      "hoursLabel": "Availability",
+      "availabilityLabel": "Status",
+      "pending": "Phone number, full address and VAT number will be published in the final version of the site."
+    }
+  },
+  "footer": {
+    "tagline": "Independent senior energy consulting for companies, funds and investors.",
+    "columns": {
+      "navigation": "Navigation",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "rights": "All rights reserved.",
+    "privacy": "Privacy policy",
+    "piva": "VAT",
+    "independent": "Independent consulting · No commissions from suppliers",
+    "photoCredits": "Photographs and video from Wikimedia Commons (Tobi Kellner, Daniel Case, PtiBzh), used under CC BY-SA or CC0: they show the world of energy, not clients."
+  },
+  "blogPreview": {
+    "title": "Writing",
+    "subtitle": "Practical notes on obligations, incentives, contracts and measurement. Written for people who have to decide, not to fill a page.",
+    "allPosts": "All articles",
+    "readingTime": "Reading"
+  },
+  "newsletter": {
+    "title": "One update, when it is worth sending.",
+    "subtitle": "The most useful analysis on incentives, obligations and the energy market. No sales updates, no automated newsletter: only content I would write for a colleague.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "name@company.com",
+    "consent": "I agree to the processing of my data to receive the newsletter.",
+    "privacyLink": "Privacy policy",
+    "submit": "Subscribe",
+    "submitting": "Subscribing…",
+    "success": "Thank you! Check your inbox to confirm the subscription.",
+    "successPending": "Subscription recorded. The confirmation e-mail is not sent yet: I will add you myself once the site is final.",
+    "error": "The subscription could not be completed. Please try again shortly.",
+    "invalidEmail": "Please enter a valid email address.",
+    "consentRequired": "You must accept the privacy notice to subscribe."
+  },
+  "servicesPage": {
+    "title": "What I can do for you",
+    "subtitle": "Six engagements, each with a scope, a deliverable and one owner. I do not sell products: I make clear what is worth doing and what is not.",
+    "photoCaption": "A solar plant seen from the air: a technical choice turned into an economic one.",
+    "backToHome": "Back to home"
+  },
+  "blogPage": {
+    "title": "Writing",
+    "subtitle": "Obligations, incentives, contracts and measurement, explained through the lens of someone who operates in the field.",
+    "photoCaption": "Milan: the city I work in and the consumption I measure.",
+    "readingTime": "Reading",
+    "allPosts": "All articles",
+    "empty": "No articles published yet."
+  },
+  "serviceDetail": {
+    "home": "Home",
+    "services": "Services",
+    "related": "Related services",
+    "faq": "Frequently asked questions",
+    "contactTitle": "Let's talk",
+    "contactBody": "Describe your situation: I will reply with an honest first assessment, even if the answer is that you do not need a consultant.",
+    "contactCta": "Request a consultation",
+    "readMore": "Read more",
+    "allServices": "All services",
+    "photoCaption": "An electrical substation: where the energy enters the site and the measurement begins."
+  },
+  "postDetail": {
+    "home": "Home",
+    "blog": "Blog",
+    "readingTime": "Reading",
+    "related": "Read next",
+    "allPosts": "All articles",
+    "contactTitle": "Got a question about this topic?",
+    "contactBody": "If the article raised a concrete case, write to me: I reply within one business day.",
+    "contactCta": "Request a consultation",
+    "authorRole": "Senior Energy Consultant",
+    "photoCaption": "A solar plant seen from the air: rows of panels, a technical choice turned into an economic one."
+  }
+}
