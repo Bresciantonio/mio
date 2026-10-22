@@ -33,9 +33,20 @@ export const siteStatus: SiteStatus = status === "live" ? "live" : "beta";
 /** True while the site is still a beta. */
 export const isBeta = siteStatus === "beta";
 
+/**
+ * The domain the site is served from.
+ *
+ * It is **not** hardcoded on purpose: it comes from `NEXT_PUBLIC_SITE_URL`
+ * (set in Vercel → Settings → Environment Variables) and it drives the
+ * canonical URLs, the sitemap, the Open Graph image and the contact email.
+ *
+ * The fallback below is `example.com`, a domain reserved by the IETF: it is
+ * never anybody's, and it makes it obvious when the variable is missing.
+ * Never put a domain you do not own here.
+ */
 const domain = process.env.NEXT_PUBLIC_SITE_URL
   ? new URL(process.env.NEXT_PUBLIC_SITE_URL).hostname
-  : "antoniobrescia.it"; // TODO: set your real domain
+  : "example.com"; // TODO: set NEXT_PUBLIC_SITE_URL in the environment
 
 export const site = {
   name: "Antonio Brescia",

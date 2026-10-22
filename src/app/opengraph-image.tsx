@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { site } from "@/lib/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -83,7 +84,7 @@ export default function Image() {
         >
           <div>Consulenza indipendente · Nessuna commissione da fornitori</div>
           <div style={{ color: "#ffffff", fontWeight: "bold" }}>
-            antoniobrescia.it
+            {site.domain}
           </div>
         </div>
       </div>

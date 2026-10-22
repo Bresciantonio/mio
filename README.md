@@ -256,13 +256,18 @@ PR è mergeabile.
 
 ## Da completare prima del lancio
 
-- [ ] `src/lib/site.ts` — dominio, telefono, P.IVA, indirizzo, LinkedIn
+- [ ] `NEXT_PUBLIC_SITE_URL` — il dominio del sito: **non è scritto nel codice**, sta
+      nelle variabili d'ambiente di Vercel (Production, Preview, Development) e
+      governa canonical, sitemap, immagine Open Graph e l'email di contatto.
+      Nel codice il fallback è `example.com`, un dominio riservato che non
+      appartiene a nessuno: serve solo a rendere evidenti quando la variabile
+      manca. Non scrivere mai qui un dominio che non è tuo.
+- [ ] `src/lib/site.ts` — telefono, P.IVA, indirizzo, LinkedIn
       (i campi vuoti non vengono pubblicati: compilandoli compaiono da soli)
 - [ ] `src/messages/*.json` → `testimonials` — le testimonianze sono **dimostrative**,
       sostituiscile con referenze reali e autorizzate (c'è già un avviso in pagina)
 - [ ] `src/content/services.ts` — le dichiarazioni su EGE, Lead Auditor ISO 50001,
       CMVP ed ESG riprendono quelle del dizionario: verificale e correggile
-- [ ] `NEXT_PUBLIC_SITE_URL` — usato per canonical, sitemap e Open Graph
 - [ ] `src/app/opengraph-image.tsx` — personalizza l'immagine di anteprima
 - [ ] Collega i form a un indirizzo reale e configura il double opt-in del provider
 - [ ] `SITE_STATUS=live` — l'ultimo passo: toglie il banner e rende il sito
